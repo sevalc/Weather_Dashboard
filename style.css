@@ -10,10 +10,11 @@
     display: flex;
     margin: 0;
     width: 100vw;
+ 
 }
 
 #sideContainer {
-    width: 30vw;
+    width: 25vw;
 }
 
 #searchBtn {
@@ -28,7 +29,7 @@
 #forecastCardDiv {
     width: 20%;
     font-size: 16px;
-
+    font-size: 11px;
 }
 
 #forecastCard {
