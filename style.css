@@ -1,0 +1,36 @@
+.jumbotron {
+    text-align: center;
+    background-color: #0A1D37;
+    color: #FFEEDB;
+    border-radius: 0;
+    border-bottom: 5px solid #FFEEDB;
+}
+
+#mainContainer {
+    display: flex;
+    margin: 0;
+    width: 100vw;
+}
+
+#sideContainer {
+    width: 30vw;
+}
+
+#searchBtn {
+    background-color: #0A1D37;
+}
+
+#city-name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#forecastCardDiv {
+    width: 20%;
+    font-size: 16px;
+
+}
+
+#forecastCard {
+    background-color: #FFEEDB;
+}
