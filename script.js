@@ -12,10 +12,13 @@ function cityFetch(city) {
     apiKey +
     "&units=imperial";
 
+  //provide city name, date, icon for weather condition as header on card
+  //provide temp, humidity, wind speed, UV index
+
   fetch(requestURL)
     .then(function (response) {
       if (response.status !== 200) {
-        alert("wrong city name");
+        alert("Please enter a valid city name.");
         cityInputError = true;
       } else {
         cityInputError = false;
@@ -28,7 +31,7 @@ function cityFetch(city) {
       }
       var cityName = document.getElementById("city-name");
       cityName.textContent = readableData.name;
-      var date = moment().format("M, D, YYYY");
+      var date = moment().format("(" + "M, D, YYYY" + ")");
       document.getElementById("currentDay").textContent = date;
       var cityHumidity = readableData.main.humidity;
       document.getElementById("humidity").textContent =
@@ -41,9 +44,6 @@ function cityFetch(city) {
         "Wind Speed: " + citywindSpeed + " MPH";
     });
 
-  //provide city name, date, icon for weather condition as header on card
-  //provide temp, humidity, wind speed, UV index
-  //UV index shows a color represents favorable, moderate or severe
   //add input to html to dispay
   //show 5 day future conditions for the same city
   var requestURLForecast =
@@ -65,7 +65,7 @@ function cityFetch(city) {
       if (cityInputError) {
         return;
       }
-      //console.log(readableDataForecast);
+
       for (var writeIndex = 0; writeIndex < 5; writeIndex++) {
         var readIndex = writeIndex * 8;
 
@@ -84,13 +84,11 @@ function cityFetch(city) {
 
         var citywindSpeed1 = forecastAtTimePoint.wind.speed;
         document.getElementById("windCard" + writeIndex).textContent =
-          "Wind Speed: " + citywindSpeed1 + " MPH";
+          "Wind Spd: " + citywindSpeed1 + " MPH";
       }
     });
 }
 
-//when a new city is searched, add last city to search history
-//when clicked on a city at search history, present same data as before
 cityFetch("Seattle");
 
 document.getElementById("searchBtn").addEventListener("click", function () {
@@ -100,3 +98,22 @@ document.getElementById("searchBtn").addEventListener("click", function () {
   }
   cityFetch(cityInput);
 });
+
+;
+
+function searchHistoryList(event) {
+  var collectionUlEl = document.getElementById("collectionList")
+  var cityInput = document.getElementById("textarea1").value;
+  
+  collectionUlEl.innerHTML = "";
+  var li = document.createElement("li");
+
+  li.textContent = cityInput;
+  console.log(cityInput)
+  collectionUlEl.appendChild(li);
+}
+document
+  .getElementById("searchBtn")
+  .addEventListener("click", searchHistoryList);
+
+

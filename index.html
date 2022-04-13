@@ -27,12 +27,17 @@
                     class="materialize-textarea"
                     placeholder="City Name"
                   ></textarea>
-                  <label for="textarea1">Textarea</label>
+                  <label for="textarea1"></label>
                 </div>
               </div>
             </form>
           </div>
           <a class="waves-effect waves-light btn" id="searchBtn">SEARCH</a>
+          <div id="search-history">
+            <ul class="collection" id="collectionList">
+              
+            </ul>
+          </div>
         </div>
         <div class="container">
           <div class="row">
@@ -50,7 +55,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row" id="weatherDisplayBox">
             <div class="col s2" id="forecastCardDiv">
               <div class="card-panel" id="forecastCard">
                 <span class="black-text"
