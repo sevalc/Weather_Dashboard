@@ -18,7 +18,10 @@ screenshot from my page:
 
 links:
 URL:
+https://sevalc.github.io/Weather_Dashboard/
 
 GitHUb:
+https://github.com/sevalc/Weather_Dashboard
+
 
 
