@@ -97,23 +97,34 @@ document.getElementById("searchBtn").addEventListener("click", function () {
     return;
   }
   cityFetch(cityInput);
+  cityHistoryArray.unshift(cityInput);
+  if (cityHistoryArray.length > 10) {
+    cityHistoryArray.pop();
+  }
+  renderHistoryHTML();
 });
 
 ;
 
-function searchHistoryList(event) {
-  var collectionUlEl = document.getElementById("collectionList")
-  var cityInput = document.getElementById("textarea1").value;
-  
-  collectionUlEl.innerHTML = "";
-  var li = document.createElement("li");
+var cityHistoryArray = [];
 
-  li.textContent = cityInput;
-  console.log(cityInput)
-  collectionUlEl.appendChild(li);
+function renderHistoryHTML() {
+  var collectionUlEl = document.getElementById("collectionList");
+  collectionUlEl.innerHTML = "";
+  for (var i = 0; i < cityHistoryArray.length; i++) {
+    var li = document.createElement("li");
+    li.textContent = cityHistoryArray[i];
+    collectionUlEl.appendChild(li);
+  }
 }
-document
-  .getElementById("searchBtn")
-  .addEventListener("click", searchHistoryList);
+
+function cityClicked(event) {
+  cityFetch(event.target.textContent);
+}
+
+document.getElementById("collectionList").addEventListener("click", cityClicked)
+
+
+
 
 

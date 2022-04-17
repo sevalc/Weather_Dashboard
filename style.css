@@ -13,13 +13,22 @@
 }
 
 #sideContainer {
-    width: 25vw;
+    width: 20vw;
     display: flex;
     flex-direction: column;
 }
 
 .collection {
-    width: 25vw;
+    width: 20vw;
+}
+
+#collectionList li {
+    background-color: #FFEEDB;
+    border: 2px solid #0A1D37;
+    margin: 5px;
+}
+#collectionList li:hover {
+    font-size: larger;
 }
 
 #searchBtn {
@@ -30,12 +39,16 @@
     font-weight: bold;
     font-size: 20px;
 }
+
 #currentDay {
     font-weight: bold;
     font-size: 20px;
 }
 
-
+h6 {
+    font-weight: bold;
+    color: #0A1D37;
+}
 #forecastCardDiv {
     width: 20%;
     font-size: 16px;
