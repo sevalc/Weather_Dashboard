@@ -14,7 +14,7 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
 screenshot from my page:
-![GettingStarted](screenSWeatherDashboard.JPG)
+![screenshot](weather_dashboard2.JPG)
 
 links:
 URL:
